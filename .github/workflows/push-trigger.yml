@@ -1,0 +1,37 @@
+name: Test repository when push
+
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  test:
+    permissions:
+      contents: read
+      issues: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: 'Set up JDK 21'
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 21
+          cache: 'maven'
+      - name: 'Run tests'
+        run: mvn test --file pom.xml
+      - if: failure()
+        name: 'Create failed issue'
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TYPE: Testcontainers
+          RUN-ID: ${{ github.run_id }}
+          JOB-ID: ${{ github.job }}
+          REF: ${{ github.ref }}
+          REF-NAME: ${{ github.ref_name }}

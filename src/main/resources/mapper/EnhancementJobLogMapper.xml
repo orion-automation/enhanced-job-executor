@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EnhancementJobLogMapper">
+    <insert id="save" parameterType="com.eorionsolution.camunda.plugin.enhancedjobexecutor.domain.EnhancementJobLogEntity">
+        INSERT INTO ENHANCEMENT_JOB_LOG (ID_, JOB_ID_, JOB_STATE_, TIMEOUT_, JOB_DEF_ID_, JOB_DEF_TYPE_, ACT_ID_, EXECUTION_ID_,
+                                         ROOT_PROC_INST_ID_, PROCESS_INSTANCE_ID_, PROCESS_DEF_ID_, PROCESS_DEF_KEY_,
+                                         DEPLOYMENT_ID_, TENANT_ID_, HOSTNAME_, EXECUTION_THREAD_NAME_, EXECUTION_START_TIMESTAMP_)
+        VALUES (#{id}, #{jobId}, #{jobState}, #{timeout}, #{jobDefinitionId}, #{jobDefinitionType}, #{activityId}, #{executionId},
+                #{rootProcessInstanceId}, #{processInstanceId}, #{processDefinitionId}, #{processDefinitionKey},
+                #{deploymentId}, #{tenantId}, #{hostName}, #{executionThreadName}, #{startTime})
+
+    </insert>
+
+    <update id="update" parameterType="com.eorionsolution.camunda.plugin.enhancedjobexecutor.domain.EnhancementJobLogEntity">
+        UPDATE ENHANCEMENT_JOB_LOG SET EXECUTION_COMPLETE_TIMESTAMP_ = #{endTime}, JOB_STATE_ = #{jobState}, EXECUTION_DURATION_=#{duration}
+        <if test="jobState == 2">
+            ,JOB_EXCEPTION_MSG_=#{exceptionMessage}
+        </if>
+        WHERE ID_=#{id}
+    </update>
+</mapper>
