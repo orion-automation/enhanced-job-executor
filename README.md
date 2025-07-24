@@ -51,7 +51,7 @@ Add this extension as a dependency to your application. When using Maven, you ma
 
 ```xml
 <dependency>
-  <groupId>com.eorionsolution.camunda.plugin</groupId>
+  <groupId>com.eorion.bo.plugin</groupId>
   <artifactId>enhanced-job-executor</artifactId>
   <version>7.22.0</version>
 </dependency>
