@@ -63,7 +63,7 @@ Copy `enhanced-job-executor-1.0.0.jar` to your application server's classpath li
 
 ### For Spring Boot Application
 
-A spring boot starter `enhanced-job-executor-spring-boot-starter` can be used. 
+A spring boot starter [`enhanced-job-executor-spring-boot-starter`](https://github.com/orion-automation/enhanced-job-executor-spring-boot-starter) can be used. 
 For detail information, follow that project.
 
 ## Configuration
