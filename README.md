@@ -1,3 +1,8 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Maven Library Publish](https://github.com/orion-automation/enhanced-job-executor/actions/workflows/sonatype-publish.yml/badge.svg)](https://github.com/orion-automation/enhanced-job-executor/actions/workflows/sonatype-publish.yml)
+[![Tests](https://github.com/orion-automation/application/actions/workflows/push-trigger.yml/badge.svg)](https://github.com/orion-automation/enhanced-job-executor/actions/workflows/push-trigger.yml)
+[![Maven Central](https://maven-badges.sml.io/sonatype-central/com.eorion.bo.plugin/enhanced-job-executor/badge.svg)](https://maven-badges.sml.io/sonatype-central/com.eorion.bo.plugin/enhanced-job-executor)
+
 # Enhanced Job Executor for Camunda 7
 
 An extension providing enhanced job executor features as follows:
