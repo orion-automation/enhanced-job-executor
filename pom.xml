@@ -6,7 +6,7 @@
 
     <groupId>com.eorion.bo.plugin</groupId>
     <artifactId>enhanced-job-executor</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>enhanced-job-executor</name>
     <description>An engine plugin of enhanced job executor for Camunda Platform 7</description>
     
