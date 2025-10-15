@@ -37,8 +37,8 @@ The duration of the job execution in millisecond
 ## Installation
 
 > Tested Environment:
->* Camunda Platform 7 v7.22.0
->* Java 21
+>* Camunda Platform 7 v7.24.0
+>* Java 17
 
 ### Prerequisite
 
@@ -59,7 +59,7 @@ Add this extension as a dependency to your application. When using Maven, you ma
 
 ### For Shared Process Engine (tomcat for example)
 
-Copy `enhanced-job-executor-1.0.0.jar` to your application server's classpath lib (e.g. `apache-tomcat-<version>\lib`)
+Copy `enhanced-job-executor-${last-version}.jar` to your application server's classpath lib (e.g. `apache-tomcat-<version>\lib`)
 
 ### For Spring Boot Application
 
